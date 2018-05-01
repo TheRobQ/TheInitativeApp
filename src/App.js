@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import LeftPanel from './components/LeftPanel'
 import MidPanel from './components/MidPanel'
+import RightPanel from './components/RightPanel'
 
 class App extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class App extends Component {
         <Navbar />
         <LeftPanel />
         <MidPanel />
+        <RightPanel />
       </div>
     );
   }
