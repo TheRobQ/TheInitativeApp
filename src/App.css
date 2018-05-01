@@ -124,15 +124,11 @@ center {
 .imageSlider {
   max-width: 250px;
   min-width: 125px;
-  grid-row-start: leftImage;
-  grid-row-end: leftImage;
+  /* grid-area: leftImage; */
   height: auto;
 }
 
 .leftImage {
-  /*border-left: solid;
-  border-color: darkgray;
-  border-width:  .25px;*/
   grid-area: leftImage;
 }
 
@@ -172,7 +168,6 @@ center {
   background-color: rgba(179,67,62,0.3);
 }
 
-/** {box-sizing:border-box}*/
 
 /* Slideshow container */
 
