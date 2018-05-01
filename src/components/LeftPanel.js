@@ -5,7 +5,7 @@ export default class LeftPanel extends React.Component{
 
   render(){
     return(
-    <div className="sider">
+    <section className="sider">
       <form id="form1">
         <table>
           <tbody>
@@ -39,6 +39,6 @@ export default class LeftPanel extends React.Component{
           </tbody>
         </table>
       </form>
-    </div>)
+    </section>)
   }
 }

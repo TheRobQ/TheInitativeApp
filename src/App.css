@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0px;
   font-family: sans-serif;
+  height: auto;
 }
 
 h1 {
@@ -96,12 +97,12 @@ center {
   font-family: 'Roboto', sans-serif;
 }
 
-/* .main {
+.main {
   grid-area: main;
-  background: url("../paper.jpg");
+  background: url("./img/paper.jpg");
   padding: 17px;
   border-radius: 4px;
-} */
+}
 
 .header {
   grid-area: header;
@@ -219,7 +220,7 @@ background-color: lightgray;
   padding-left: 9%;
 }
 .grid {
-  height: auto;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: [header]8% [main]auto [footer]5%;
@@ -261,6 +262,9 @@ background-color: lightgray;
      "leftImage"
      "footer"
   }
+  body{
+    padding: 0;
+  }
   .sider{
     border:none;
   }
@@ -276,8 +280,5 @@ background-color: lightgray;
   }
   button{
     font-size: small;
-  }
-  body{
-    padding: 0;
   }
 }
