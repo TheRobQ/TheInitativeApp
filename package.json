@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.1.0",
+    "jquery": "1.9.1",
+    "popper.js": "^1.14.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-pinterest": "^1.2.0",
