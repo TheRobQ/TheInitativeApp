@@ -5,22 +5,22 @@ import LeftPanel from './components/LeftPanel'
 import MidPanel from './components/MidPanel'
 import RightPanel from './components/RightPanel'
 
+
 class App extends Component {
-  constructor(props) {
-    super(props)
+  constructor(props){
+    super(props);
     this.state = {
-      players: [],
+      players: []
     }
   }
-  
+
   render() {
-    console.log(React);
     return (
       <div className="grid">
         <Navbar />
         <LeftPanel />
-        <MidPanel />
-        <RightPanel />
+        <MidPanel players={this.state.players}/>
+        <RightPanel  />
       </div>
     );
   }

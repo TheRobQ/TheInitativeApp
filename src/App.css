@@ -57,6 +57,11 @@ center {
   font-size: medium;
 }
 
+.indent{
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
 .remove {
   position: relative;
   top: 3px;
