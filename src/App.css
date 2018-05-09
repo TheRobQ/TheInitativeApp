@@ -80,6 +80,11 @@ center {
   rgba(255,28,62,0.9);
 } */
 
+.slider{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
 
 .ordered {
   background-color: none;

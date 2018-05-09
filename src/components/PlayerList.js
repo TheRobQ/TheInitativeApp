@@ -1,9 +1,9 @@
 import React from 'react';
 import PlayerCard from './PlayerCard'
 
-const PlayerList =({cards}) =>{
+const PlayerList = ({cards, handleNameChange, handleModChange}) =>{
   return(
-      cards.map((card, i)  => <PlayerCard key={i}/>)
+      cards.map((card, i)  => <PlayerCard key={i} name={card.name} id={i} modifier={card.modifier} handleNameChange={handleNameChange} handleModChange={handleModChange}/>)
   )
 }
 

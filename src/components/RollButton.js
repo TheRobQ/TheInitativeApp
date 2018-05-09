@@ -1,9 +1,11 @@
 import React from 'react';
 
-function RollButton (){
+function RollButton ({getValues}){
+
+
   return(
     <td className="center">
-      <button type="submit" form="form1" value="Submit" id="roll">Roll the Dice</button>
+      <button type="submit" form="form1" id="roll">Roll the Dice</button>
     </td>
     )
 }

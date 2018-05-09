@@ -1,17 +1,41 @@
 import React from 'react';
-import urls from '../urls'
+import urls from '../urls';
+import Slider from './Slider'
 
-function RightPanel (){
-  console.log(urls);
-  return (
-    <section className="leftImage">
-      <div className="mySlides">{
-        // eslint-disable-next-line
-      }  <a href={urls[0]} data-pin-do="embedPin" data-pin-width="large" data-pin-terse="true" ></a>
-      </div>
+export default class RightPanel extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      urlArray: urls,
+      slideIndex: 0,
+      image: urls[0]
+    }
+    this.slideIncrementer = this.slideIncrementer.bind(this)
+  }
 
-    </section>
-  )
+  slideIncrementer = (urls) =>{
+    console.log( this.state.urlArray.length-2);
+     if(this.state.slideIndex > this.state.urlArray.length-2){
+       return this.setState({slideIndex: 0, image: urls[0]})
+     } else{
+        this.setState((prevState) => {
+        return   {slideIndex:  prevState.slideIndex += 1, image: urls[this.state.slideIndex]}
+        })
+      }
+  }
+
+
+  intervals = setInterval(() => this.slideIncrementer(urls), 24000)
+
+
+  render(){
+    console.log(this.state.slideIndex);
+    console.log(this.state.image);
+    return (
+      <section className="leftImage">
+        <div className="mySlides">
+          <Slider image={this.state.image}/>
+        </div>
+      </section>)
+  }
 }
-
-export default RightPanel
