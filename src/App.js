@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import LeftPanel from './components/LeftPanel';
 import MidPanel from './components/MidPanel';
 import RightPanel from './components/RightPanel';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(props){
@@ -13,11 +14,8 @@ class App extends Component {
       {name: '', modifier:''},],
       combat: false
     }
-    // this.handleNameChange = this.handleNameChange.bind(this)
-    // this.rollTheDice = this.rollTheDice.bind(this)
-    // this.clearCombat = this.clearCombat.bind(this)
   }
-  //Set Values
+  //Set Values for a player's name
   handleNameChange = (id) => (e) => {
     const newVal = this.state.players.map(
       (player, pid) =>{
@@ -29,6 +27,7 @@ class App extends Component {
       this.setState({players: newVal})
   }
 
+  //Set Values for a player's initative modifier
   handleModChange = (id) => (e) => {
     const newVal = this.state.players.map(
       (player, pid) =>{
@@ -40,27 +39,31 @@ class App extends Component {
       this.setState({players: newVal})
   }
 
-  //roll button clicked
+  //roll button clicked, sets value to true which kciks off the array map in the initative list component
   rollTheDice = (event) =>{
     event.preventDefault()
     this.setState({combat: true})
   }
-//MidPanel clear button click
+//MidPanel clear button click, sets value to false and renders an empty midpanel
   clearCombat =(event) =>{
     event.preventDefault()
       this.setState({combat: false})
   }
+
   //Button Row
+  //add object to players array
   addCharacter = (e) =>{
     e.preventDefault()
     this.setState({players: [...this.state.players, {name: '', modifier:''}]})
   }
 
+  //remove last object from players array
   removeCharacter = (e) =>{
     e.preventDefault()
     this.setState({players: this.state.players.slice(0, -1)})
   }
 
+  //clears players array. Usefuyl for loading a pre-defined party
   removeAll = (e) =>{
     e.preventDefault()
     this.setState({players: []})
@@ -85,6 +88,7 @@ class App extends Component {
           setInitative={this.state.combat}
           clearCombat={this.clearCombat}/>
         <RightPanel  />
+        <Footer />
       </div>
     );
   }
