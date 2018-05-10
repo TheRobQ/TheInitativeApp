@@ -23,7 +23,7 @@ const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleName
                 <button id="axAll" form="form1" className="myBtn" onClick={removeAll}>Remove All</button>
               </td>
             </tr>
-            <tr>
+            <tr className="roll">
               <td>
                 &nbsp;
               </td>
@@ -35,6 +35,12 @@ const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleName
           </tbody>
         </table>
       </form>
+      <div class="functionality">
+        <p class="btn btn-primary" id="save" form="form1">Save party</p>
+        <p class="btn btn-primary" id="load" form="form1">Load party</p>
+        <p class="btn btn-primary" id="clear" form="form1">Clear party</p>
+        <br />
+      </div>
     </section>)
   }
 

@@ -25,7 +25,7 @@ export default class RightPanel extends React.Component{
   }
 
 
-  intervals = setInterval(() => this.slideIncrementer(urls), 24000)
+  intervals = setInterval(() => this.slideIncrementer(urls), 14000)
 
 
   render(){

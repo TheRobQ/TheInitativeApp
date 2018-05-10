@@ -38,6 +38,7 @@ class App extends Component {
       this.setState({players: newVal})
   }
 
+  
   //Button Row
   addCharacter = (e) =>{
     e.preventDefault()
