@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navbar from './components/Navbar'
-import LeftPanel from './components/LeftPanel'
-import MidPanel from './components/MidPanel'
-import RightPanel from './components/RightPanel'
-
+import Navbar from './components/Navbar';
+import LeftPanel from './components/LeftPanel';
+import MidPanel from './components/MidPanel';
+import RightPanel from './components/RightPanel';
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
       players: [{name: '', modifier:''}, {name: '', modifier:''},
-      {name: '', modifier:''},]
+      {name: '', modifier:''},],
+      combat: false
     }
     this.handleNameChange = this.handleNameChange.bind(this)
+    this.rollTheDice = this.rollTheDice.bind(this)
   }
   //Set Values
   handleNameChange = (id) => (e) => {
@@ -38,7 +39,12 @@ class App extends Component {
       this.setState({players: newVal})
   }
 
-  
+  rollTheDice = (event) =>{
+    event.preventDefault()
+    console.log('click');
+    this.setState({combat: true})
+  }
+
   //Button Row
   addCharacter = (e) =>{
     e.preventDefault()
@@ -56,6 +62,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.combat);
     return (
       <div className="grid">
         <Navbar />
@@ -66,8 +73,9 @@ class App extends Component {
           cards={this.state.players}
           handleNameChange={this.handleNameChange}
           handleModChange={this.handleModChange}
+          rollTheDice={this.rollTheDice}
         />
-        <MidPanel players={this.state.players}/>
+        <MidPanel players={this.state.players} setInitative={this.state.combat}/>
         <RightPanel  />
       </div>
     );

@@ -2,11 +2,11 @@ import React from 'react';
 import RollButton from './RollButton';
 import PlayerList from './PlayerList'
 
-const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleNameChange, handleModChange}) => {
+const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleNameChange, handleModChange, rollTheDice}) => {
 
     return(
     <section className="sider">
-      <form id="form1" >
+      <form id="form1" onSubmit={rollTheDice}>
         <table>
           <tbody>
             <PlayerList cards={cards} handleNameChange={handleNameChange} handleModChange={handleModChange}/>
@@ -35,10 +35,10 @@ const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleName
           </tbody>
         </table>
       </form>
-      <div class="functionality">
-        <p class="btn btn-primary" id="save" form="form1">Save party</p>
-        <p class="btn btn-primary" id="load" form="form1">Load party</p>
-        <p class="btn btn-primary" id="clear" form="form1">Clear party</p>
+      <div className="functionality">
+        <p className="btn btn-primary" id="save" form="form1">Save party</p>
+        <p className="btn btn-primary" id="load" form="form1">Load party</p>
+        <p  className="btn btn-primary" id="clear" form="form1">Clear party</p>
         <br />
       </div>
     </section>)

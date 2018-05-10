@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import InitativeList from './InitativeList';
 
 export default class MidPanel extends React.Component {
   render(){
@@ -13,6 +14,7 @@ export default class MidPanel extends React.Component {
             <em>&mdash; Gary Gygax</em>
           </p>
         </article>
+        <InitativeList players={this.props.players} setInitative={this.props.setInitative}/>
         <p className="btn btn-primary" id="clearAll">Clear All</p><br />
       </section>
     )

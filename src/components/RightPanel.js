@@ -14,7 +14,6 @@ export default class RightPanel extends React.Component{
   }
 
   slideIncrementer = (urls) =>{
-    console.log( this.state.urlArray.length-2);
      if(this.state.slideIndex > this.state.urlArray.length-2){
        return this.setState({slideIndex: 0, image: urls[0]})
      } else{
@@ -29,8 +28,6 @@ export default class RightPanel extends React.Component{
 
 
   render(){
-    console.log(this.state.slideIndex);
-    console.log(this.state.image);
     return (
       <section className="leftImage">
         <div className="mySlides">
