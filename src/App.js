@@ -13,8 +13,9 @@ class App extends Component {
       {name: '', modifier:''},],
       combat: false
     }
-    this.handleNameChange = this.handleNameChange.bind(this)
-    this.rollTheDice = this.rollTheDice.bind(this)
+    // this.handleNameChange = this.handleNameChange.bind(this)
+    // this.rollTheDice = this.rollTheDice.bind(this)
+    // this.clearCombat = this.clearCombat.bind(this)
   }
   //Set Values
   handleNameChange = (id) => (e) => {
@@ -39,12 +40,16 @@ class App extends Component {
       this.setState({players: newVal})
   }
 
+  //roll button clicked
   rollTheDice = (event) =>{
     event.preventDefault()
-    console.log('click');
     this.setState({combat: true})
   }
-
+//MidPanel clear button click
+  clearCombat =(event) =>{
+    event.preventDefault()
+      this.setState({combat: false})
+  }
   //Button Row
   addCharacter = (e) =>{
     e.preventDefault()
@@ -75,7 +80,10 @@ class App extends Component {
           handleModChange={this.handleModChange}
           rollTheDice={this.rollTheDice}
         />
-        <MidPanel players={this.state.players} setInitative={this.state.combat}/>
+        <MidPanel
+          players={this.state.players}
+          setInitative={this.state.combat}
+          clearCombat={this.clearCombat}/>
         <RightPanel  />
       </div>
     );

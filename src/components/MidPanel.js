@@ -1,8 +1,7 @@
 import React from 'react';
 import InitativeList from './InitativeList';
 
-export default class MidPanel extends React.Component {
-  render(){
+const MidPanel =({players, setInitative,  clearCombat}) => {
     return (
       <section className="main">
         <h1>Initiative order</h1>
@@ -14,9 +13,10 @@ export default class MidPanel extends React.Component {
             <em>&mdash; Gary Gygax</em>
           </p>
         </article>
-        <InitativeList players={this.props.players} setInitative={this.props.setInitative}/>
-        <p className="btn btn-primary" id="clearAll">Clear All</p><br />
+        <InitativeList players={players} setInitative={setInitative}/>
+        <p className="btn btn-primary" id="clearAll" onClick={clearCombat}>Clear All</p><br />
       </section>
     )
-  }
 }
+
+export default MidPanel
