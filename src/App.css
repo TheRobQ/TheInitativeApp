@@ -41,7 +41,6 @@ tr: last-of-type {
 
 button {
   background-color: snow;
-  /*transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;*/
 }
 
 hr {
@@ -52,7 +51,7 @@ label {
   margin-right: 2px;
 }
 
-center {
+center{
   margin-top: -2.5px;
   font-size: medium;
 }
