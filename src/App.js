@@ -28,7 +28,7 @@ class App extends Component {
       this.setState({players: newVal})
   }
 
-  //Set Values for a player's initative modifie in the form
+  //Set Values for a player's initative modifier in the form
   handleModChange = (id) => (e) => {
     const newVal = this.state.players.map(
       (player, pid) =>{
@@ -84,6 +84,17 @@ class App extends Component {
     this.setState({players: []})
   }
 
+  //Player clicks load party, adds party to state object
+  loadParty =(event) => {
+    let keys = Object.keys(localStorage);
+    const localParty = [];
+
+    for (var i = 0; i < keys.length / 2; i++) {
+      localParty.push({name: localStorage.getItem(keys[i + keys.length/2]), modifier: localStorage.getItem(keys[i])});
+    }
+    this.setState({players: [...localParty, ...this.state.players]})
+  }
+
 //Player clicks skull on MidPanel to remove that player
  removePlayer = (event, data) =>{
     event.preventDefault()
@@ -91,7 +102,6 @@ class App extends Component {
     players.splice(data, 1)
     this.setState({initativeList: players})
   }
-
 
   render() {
     // console.log(this.state);
@@ -107,6 +117,7 @@ class App extends Component {
           handleModChange={this.handleModChange}
           rollTheDice={this.rollTheDice}
           combat={this.state.combat}
+          loadParty={this.loadParty}
         />
         <MidPanel
           players={this.state.initativeList}
@@ -119,5 +130,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default App;
