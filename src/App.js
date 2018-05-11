@@ -38,14 +38,21 @@ class App extends Component {
       })
       this.setState({players: newVal})
   }
+  //Generate a random number from 1 to 20
+   random = () => {
+    return Math.floor((Math.random() * 20) + 1)
+  }
 
-  //roll button clicked, sets value to true which kciks off the array map in the initative list component
+//roll button clicked, sets value to true which kciks off the array map in the initative list component
   rollTheDice = (event) =>{
     event.preventDefault()
-    this.setState({combat: true})
+    let newMods = this.state.players
+    newMods.forEach(player => player.initValue = parseInt(player.modifier,10) + this.random())
+    this.setState({combat: true, players: newMods})
   }
+
 //MidPanel clear button click, sets value to false and renders an empty midpanel
-  clearCombat =(event) =>{
+  clearCombat = (event) =>{
     event.preventDefault()
       this.setState({combat: false})
   }
@@ -69,8 +76,15 @@ class App extends Component {
     this.setState({players: []})
   }
 
+//Player clkicks skull on MidPanel to remove that player
+ removePlayer = (event, data) =>{
+    event.preventDefault()
+    console.log(data);
+    // players.splice(index, 1)
+  }
+
+
   render() {
-    console.log(this.state.combat);
     return (
       <div className="grid">
         <Navbar />
@@ -82,11 +96,13 @@ class App extends Component {
           handleNameChange={this.handleNameChange}
           handleModChange={this.handleModChange}
           rollTheDice={this.rollTheDice}
+          setInitative={this.state.combat}
         />
         <MidPanel
           players={this.state.players}
           setInitative={this.state.combat}
-          clearCombat={this.clearCombat}/>
+          clearCombat={this.clearCombat}
+          removePlayer={this.removePlayer}/>
         <RightPanel  />
         <Footer />
       </div>

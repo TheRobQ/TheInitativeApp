@@ -1,14 +1,13 @@
 import React from 'react';
-import InitativeCard from './InitativeCard'
-const  random = function(modifier) {
-  return Math.floor((Math.random() * 20) + 1)
-}
+import InitativeCard from './InitativeCard';
 
-const InitativeList = ({players, setInitative}) =>{
 
+
+const InitativeList = ({players, setInitative, removePlayer}) =>{
     if(setInitative === true){
       return(
-          players.sort((a, b) => b.modifier-a.modifier).map((card, i)  => <InitativeCard key={i} name={card.name} id={i} modifier={random(card.modifier)} />)
+          players.sort((a, b) => b.initValue-a.initValue)
+          .map((card, i)  => <InitativeCard key={i} name={card.name} id={i} modifier={card.initValue} removePlayer={removePlayer}/>)
       )
     } else {
       return <div></div>

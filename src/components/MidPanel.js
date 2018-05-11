@@ -1,7 +1,7 @@
 import React from 'react';
 import InitativeList from './InitativeList';
 
-const MidPanel =({players, setInitative,  clearCombat}) => {
+const MidPanel =({players, setInitative,  clearCombat, removePlayer}) => {
     return (
       <section className="main">
         <h1>Initiative order</h1>
@@ -13,7 +13,7 @@ const MidPanel =({players, setInitative,  clearCombat}) => {
             <em>&mdash; Gary Gygax</em>
           </p>
         </article>
-        <InitativeList players={players} setInitative={setInitative}/>
+        <InitativeList players={players} setInitative={setInitative} removePlayer={removePlayer}/>
         <p className="btn btn-primary" id="clearAll" onClick={clearCombat}>Clear All</p><br />
       </section>
     )

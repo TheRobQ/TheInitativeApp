@@ -2,14 +2,14 @@ import React from 'react';
 import RollButton from './RollButton';
 import PlayerList from './PlayerList'
 
-const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleNameChange, handleModChange, rollTheDice}) => {
+const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleNameChange, handleModChange, rollTheDice, setInitative}) => {
 
     return(
     <section className="sider">
       <form id="form1" onSubmit={rollTheDice}>
         <table>
           <tbody>
-            <PlayerList cards={cards} handleNameChange={handleNameChange} handleModChange={handleModChange}/>
+            <PlayerList cards={cards} handleNameChange={handleNameChange} handleModChange={handleModChange} setInitative={setInitative}/>
             <tr className="holder">
             </tr>
             <tr id="buttonRow">

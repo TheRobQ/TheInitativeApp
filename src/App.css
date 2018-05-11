@@ -72,7 +72,7 @@ center {
   padding-left: 3px;
   padding-right: 3px;
   border: none;
-  /* background: url('./img/skull-crossbones.png'); */
+  background: url('./img/skull-crossbones.png');
   background-size: 25px 25px;
 }
 
@@ -126,6 +126,8 @@ center {
 .footer {
   background-color: darkred;
   grid-area: footer;
+  height: 100%;
+  min-height: 20px;
 }
 
 .sider {
@@ -227,7 +229,7 @@ background-color: lightgray;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: [header]8% [main]auto [footer]5%;
+  grid-template-rows: [header]8% [main]auto [footer]4%;
   grid-column-gap: 10px;
   grid-row-gap: 15px;
   grid-template-areas: "header header header header header header" "sider sider main main leftImage leftImage" "footer footer footer footer footer footer";
