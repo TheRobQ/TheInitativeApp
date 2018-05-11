@@ -28,9 +28,9 @@ tr {
   width: inherit;
 }
 
-tr: last-of-type {
+/* tr:last-of-type {
   border-bottom: none;
-}
+} */
 
 button {
   background-color: snow;
@@ -65,7 +65,7 @@ center{
   padding-right: 3px;
   border: none;
   background: url('./img/skull-crossbones.png');
-  background-size: 25px 25px;
+  background-size: 28px 28px;
 }
 
 .mySlides{
@@ -102,7 +102,7 @@ center{
 
 .main {
   grid-area: main;
-  background: url("./img/paper.jpg");
+  background: url('./img/paper.jpg');
   padding: 17px;
   border-radius: 4px;
 }
