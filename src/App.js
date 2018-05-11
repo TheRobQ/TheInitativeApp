@@ -12,10 +12,11 @@ class App extends Component {
     this.state = {
       players: [{name: '', modifier:''}, {name: '', modifier:''},
       {name: '', modifier:''},],
-      combat: false
+      combat: false,
+      initativeList: []
     }
   }
-  //Set Values for a player's name
+  //Set Values for a player's name in the form
   handleNameChange = (id) => (e) => {
     const newVal = this.state.players.map(
       (player, pid) =>{
@@ -27,7 +28,7 @@ class App extends Component {
       this.setState({players: newVal})
   }
 
-  //Set Values for a player's initative modifier
+  //Set Values for a player's initative modifie in the form
   handleModChange = (id) => (e) => {
     const newVal = this.state.players.map(
       (player, pid) =>{
@@ -38,6 +39,7 @@ class App extends Component {
       })
       this.setState({players: newVal})
   }
+
   //Generate a random number from 1 to 20
    random = () => {
     return Math.floor((Math.random() * 20) + 1)
@@ -46,15 +48,21 @@ class App extends Component {
 //roll button clicked, sets value to true which kciks off the array map in the initative list component
   rollTheDice = (event) =>{
     event.preventDefault()
-    let newMods = this.state.players
-    newMods.forEach(player => player.initValue = parseInt(player.modifier,10) + this.random())
-    this.setState({combat: true, players: newMods})
+    let initativeList = []
+    console.log(this.state.players);
+    for(let i = 0; i < this.state.players.length; i++){
+      initativeList.push(this.state.players[i])
+    }
+    initativeList.forEach(element => element.initValue = parseInt(element.modifier,10) + this.random())
+    this.setState((prevState) => {
+      return   {combat: true, initativeList: initativeList}
+    })
   }
 
 //MidPanel clear button click, sets value to false and renders an empty midpanel
   clearCombat = (event) =>{
     event.preventDefault()
-      this.setState({combat: false})
+      this.setState({combat: false, initativeList: []})
   }
 
   //Button Row
@@ -76,15 +84,17 @@ class App extends Component {
     this.setState({players: []})
   }
 
-//Player clkicks skull on MidPanel to remove that player
+//Player clicks skull on MidPanel to remove that player
  removePlayer = (event, data) =>{
     event.preventDefault()
-    console.log(data);
-    // players.splice(index, 1)
+    let players = this.state.initativeList
+    players.splice(data, 1)
+    this.setState({initativeList: players})
   }
 
 
   render() {
+    // console.log(this.state);
     return (
       <div className="grid">
         <Navbar />
@@ -96,10 +106,10 @@ class App extends Component {
           handleNameChange={this.handleNameChange}
           handleModChange={this.handleModChange}
           rollTheDice={this.rollTheDice}
-          setInitative={this.state.combat}
+          combat={this.state.combat}
         />
         <MidPanel
-          players={this.state.players}
+          players={this.state.initativeList}
           setInitative={this.state.combat}
           clearCombat={this.clearCombat}
           removePlayer={this.removePlayer}/>

@@ -2,14 +2,16 @@ import React from 'react';
 import RollButton from './RollButton';
 import PlayerList from './PlayerList'
 
-const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleNameChange, handleModChange, rollTheDice, setInitative}) => {
+class LeftPanel extends React.Component {
 
+  render(){
+    const {addCharacter, removeCharacter, removeAll, cards,  handleNameChange, handleModChange, rollTheDice, combat} = this.props
     return(
     <section className="sider">
       <form id="form1" onSubmit={rollTheDice}>
         <table>
           <tbody>
-            <PlayerList cards={cards} handleNameChange={handleNameChange} handleModChange={handleModChange} setInitative={setInitative}/>
+            <PlayerList cards={cards} handleNameChange={handleNameChange} handleModChange={handleModChange} combat={combat}/>
             <tr className="holder">
             </tr>
             <tr id="buttonRow">
@@ -41,7 +43,7 @@ const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleName
         <p  className="btn btn-primary" id="clear" form="form1">Clear party</p>
         <br />
       </div>
-    </section>)
+    </section>)}
   }
 
 export default LeftPanel
