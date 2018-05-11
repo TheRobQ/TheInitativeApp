@@ -28,9 +28,9 @@ tr {
   width: inherit;
 }
 
-/* tr:last-of-type {
+tr:last-of-type {
   border-bottom: none;
-} */
+}
 
 button {
   background-color: snow;
