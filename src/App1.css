@@ -1,0 +1,281 @@
+h1 {
+  font-family: 'Courgette', cursive;
+  text-align: center;
+}
+
+p {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+label {
+  font-family: 'Roboto', sans-serif;
+}
+
+table {
+  margin-bottom: 10px;
+  width:100%;
+}
+
+td {
+  padding: 4px;
+  width: auto;
+}
+
+tr {
+  border-bottom: solid;
+  border-color: lightgray;
+  border-width: .25px;
+  width: inherit;
+}
+
+tr: last-of-type {
+  border-bottom: none;
+}
+
+button {
+  background-color: snow;
+}
+
+hr {
+  margin-top: -4px;
+}
+
+label {
+  margin-right: 2px;
+}
+
+center{
+  margin-top: -2.5px;
+  font-size: medium;
+}
+
+.indent{
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.remove {
+  position: relative;
+  top: 3px;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border-radius: 50%;
+  padding-left: 3px;
+  padding-right: 3px;
+  border: none;
+  background: url('./img/skull-crossbones.png');
+  background-size: 25px 25px;
+}
+
+.mySlides{
+  height: 100%;
+  width: auto;
+}
+
+.mySlides img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.ordered {
+  background-color: none;
+  font-family: 'Courgette', cursive;
+  font-size: medium;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 4px;
+  padding-bottom: 6px;
+  line-height: 20px;
+}
+
+.display-4 {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 28px;
+}
+
+.text-muted {
+  font-family: 'Roboto', sans-serif;
+}
+
+.main {
+  grid-area: main;
+  background: url("./img/paper.jpg");
+  padding: 17px;
+  border-radius: 4px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  background-color: darkred;
+  grid-area: footer;
+  height: 100%;
+  min-height: 20px;
+}
+
+.sider {
+  border-right: solid;
+  border-color: darkgray;
+  border-width: .25px;
+  grid-area: sider;
+  padding: 8px;
+}
+
+.leftImage {
+  grid-area: leftImage;
+}
+
+.quoteName {
+  text-align: right;
+}
+
+.characterName {
+  outline: none;
+  background-color: white;
+}
+
+.characterName1 {
+  outline: none;
+  background-color: white;
+}
+
+.modLabel {
+  margin-left: 12px;
+}
+
+.modifier {
+  outline: none;
+  background-color: white;
+}
+
+.modifier1 {
+  outline: none;
+  border: lightgray;
+  background-color: white;
+}
+
+.highlight {
+  background-color: rgba(179,67,62,0.3);
+}
+
+.slideshow-container {
+  width: 300px;
+  max-width: 320px;
+  margin: auto;
+}
+
+.wrapper {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.myBtn{
+  border-radius: 5px;
+}
+
+.myBtn:hover{
+background-color: lightgray;
+}
+
+#roll {
+  font-style: bold;
+  font-size: X-large;
+  border-radius: 5px;
+}
+#roll:hover{
+  background-color: lightgray;
+}
+
+.center{
+ text-align: center;
+ padding-right: .5%;
+}
+
+.btn{
+  margin-left: 10px;
+}
+
+.functionality{
+  padding-left: 13%;
+  padding-right: 13%;
+}
+.grid {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: [header]8% [main]auto [footer]4%;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  grid-template-areas: "header header header header header header" "sider sider main main leftImage leftImage" "footer footer footer footer footer footer";
+}
+
+@media screen and (max-width: 1226px) {
+  .grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    grid-template-areas: "header header"
+    "sider main"
+    "sider main"
+    "leftImage main"
+    "footer footer"
+  }
+  .sider {
+    border-right: none;
+    grid-area: sider;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .grid {
+    grid-template-columns: 60% auto;
+    grid-gap: 10px;
+    grid-template-areas: "header header"
+    "sider main"
+    "sider main"
+    "leftImage main"
+    "footer footer"
+  }
+}
+
+@media screen and (max-width: 685px) {
+  .grid {
+    height: auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "header"
+     "sider"
+     "main"
+     "leftImage"
+     "footer"
+  }
+  body{
+    padding: 0;
+  }
+  .sider{
+    border:none;
+  }
+  .functionality{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .text-muted {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+  }
+  .modLabel {
+    display: none;
+  }
+  button{
+    font-size: small;
+  }
+}
