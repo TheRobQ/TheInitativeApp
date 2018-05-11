@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   padding: 0px;
   font-family: sans-serif;
@@ -143,13 +143,11 @@ center{
 
 .characterName {
   outline: none;
-  /*border: none;*/
   background-color: white;
 }
 
 .characterName1 {
   outline: none;
-  /*border: none;*/
   background-color: white;
 }
 
@@ -159,7 +157,6 @@ center{
 
 .modifier {
   outline: none;
-  /*border: none;*/
   background-color: white;
 }
 
@@ -174,7 +171,6 @@ center{
 }
 
 
-/* Slideshow container */
 
 .slideshow-container {
   width: 300px;
@@ -291,4 +287,4 @@ background-color: lightgray;
   button{
     font-size: small;
   }
-}
+} */
