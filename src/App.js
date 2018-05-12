@@ -117,7 +117,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.initativeList);
     return (
       <div className="grid">
         <Navbar />
