@@ -3,12 +3,12 @@ import InitativeCard from './InitativeCard';
 
 
 
-const InitativeList = ({players, setInitative, removePlayer}) =>{
+const InitativeList = ({players, setInitative, removePlayer, turnRed}) =>{
 
     if(setInitative === true){
       return(
           players.sort((a, b) => b.initValue-a.initValue)
-          .map((card, i)  => <InitativeCard key={i} name={card.name} id={i} modifier={card.initValue} removePlayer={removePlayer}/>)
+          .map((player, i)  => <InitativeCard key={i} name={player.name} id={i} modifier={player.initValue} highlight={player.highlight} removePlayer={removePlayer} turnRed={turnRed} />)
       )
     } else {
       return <div></div>

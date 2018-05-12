@@ -52,7 +52,9 @@ class App extends Component {
     for(let i = 0; i < this.state.players.length; i++){
       initativeList.push(this.state.players[i])
     }
-    initativeList.forEach(element => element.initValue = parseInt(element.modifier,10) + this.random())
+    initativeList.forEach(element => {
+       element.initValue = parseInt(element.modifier,10) + this.random();
+       element.highlight = false})
     this.setState((prevState) => {
       return   {combat: true, initativeList: initativeList}
     })
@@ -64,7 +66,7 @@ class App extends Component {
       this.setState({combat: false, initativeList: []})
   }
 
-  //Button Row
+  //Button Row functions
   //add object to players array
   addCharacter = (e) =>{
     e.preventDefault()
@@ -77,6 +79,7 @@ class App extends Component {
     this.setState({players: this.state.players.slice(0, -1)})
   }
 
+  //Local storage utilities
   //clears players array. Usefuyl for loading a pre-defined party
   removeAll = (e) =>{
     e.preventDefault()
@@ -94,16 +97,27 @@ class App extends Component {
     this.setState({players: [...localParty, ...this.state.players]})
   }
 
-//Player clicks skull on MidPanel to remove that player
- removePlayer = (event, data) =>{
+//Player clicks skull on MidPanel to remove that player from the initative list
+ removePlayer = (event, id) =>{
     event.preventDefault()
     let players = this.state.initativeList
-    players.splice(data, 1)
+    players.splice(id, 1)
     this.setState({initativeList: players})
   }
 
+  turnRed = (event, id) =>{
+    const toggle = this.state.initativeList.map(
+      (player, index) =>{
+        if(id !== index){
+          return player
+        }
+        return{...player, highlight: !player.highlight}
+      })
+      this.setState({initativeList: toggle})
+  }
+
   render() {
-    // console.log(this.state);
+    console.log(this.state.initativeList);
     return (
       <div className="grid">
         <Navbar />
@@ -122,7 +136,8 @@ class App extends Component {
           players={this.state.initativeList}
           setInitative={this.state.combat}
           clearCombat={this.clearCombat}
-          removePlayer={this.removePlayer}/>
+          removePlayer={this.removePlayer}
+          turnRed={this.turnRed}/>
         <RightPanel  />
         <Footer />
       </div>
