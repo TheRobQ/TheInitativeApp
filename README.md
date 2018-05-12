@@ -1,4 +1,4 @@
-# Q1-Project
+# The Initative App
 <h3>A basic initiative tracker for D20 games. </h3>
 
 1. Type player and monster names in the Player/Foe field and the initiative modifier in the modifier field. 
