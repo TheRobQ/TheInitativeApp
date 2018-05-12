@@ -4,6 +4,7 @@ import InitativeCard from './InitativeCard';
 
 
 const InitativeList = ({players, setInitative, removePlayer}) =>{
+
     if(setInitative === true){
       return(
           players.sort((a, b) => b.initValue-a.initValue)

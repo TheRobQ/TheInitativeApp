@@ -49,7 +49,6 @@ class App extends Component {
   rollTheDice = (event) =>{
     event.preventDefault()
     let initativeList = []
-    console.log(this.state.players);
     for(let i = 0; i < this.state.players.length; i++){
       initativeList.push(this.state.players[i])
     }

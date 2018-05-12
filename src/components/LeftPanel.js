@@ -9,7 +9,6 @@ const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleName
     for(let i = 0; i < cards.length; i++){
       if(cards.modifier === '' || cards.name === ''){
       }else{
-      console.log(cards);
         localStorage.setItem("player" + i, cards[i].name);
         localStorage.setItem("modifier" + i, cards[i].modifier)}
     }

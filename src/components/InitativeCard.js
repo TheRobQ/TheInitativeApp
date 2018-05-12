@@ -1,8 +1,9 @@
 import React from 'react';
-
-const InitativeCard = ({name, modifier, removePlayer, id}) =>{
+// onClick={((event) => toggleRed(event))} 
+const InitativeCard = ({name, modifier, removePlayer, id, toggleRed}) =>{
+  let classes = 'ordered'
   return(
-    <p className='ordered' id={id}>{name} {modifier}&nbsp; <button className='remove' onClick={((event) => removePlayer(event, id))}></button></p>
+    <p className={classes} id={id}>{name} {modifier}&nbsp; <button className='remove' onClick={((event) => removePlayer(event, id))}></button></p>
     )
 }
 
