@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Navbar  (props)   {
+const Navbar = (props) =>  {
   return(
     <header className="header">
       <nav className="navbar navbar-dark bg-dark">
