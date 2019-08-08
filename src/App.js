@@ -136,14 +136,12 @@ class App extends Component {
           setInitative={this.state.combat}
           clearCombat={this.clearCombat}
           removePlayer={this.removePlayer}
-          turnRed={this.turnRed}/>
+          turnRed={this.turnRed} />
         <RightPanel  />
         <Footer />
       </div>
     );
   }
 }
-
-
 
 export default App;

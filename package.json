@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.1.0",
+    "bootstrap": "^4.3.1",
     "eslint": "^4.19.1",
     "jquery": "3.0.0",
-    "popper.js": "^1.14.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "popper.js": "^1.15.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-pinterest": "^1.2.0",
     "react-scripts": "1.1.4"
   },
