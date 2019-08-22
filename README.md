@@ -1,6 +1,7 @@
 # The Initative App
 <h3>A basic initiative tracker for D20 games. </h3>
 
+https://initative-app.herokuapp.com/
 1. Type player and monster names in the Player/Foe field and the initiative modifier in the modifier field. 
 2. Use the "Add Participant" button to add another Player/Foe and the Remove button to remove extra slots. 
 3. You can save your party for later use by using the "Save PArty Button" and load on subsequent visits with the "Load Party" button. 
