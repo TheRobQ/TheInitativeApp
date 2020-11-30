@@ -1,5 +1,5 @@
 # The Initative App
-<h3>A basic initiative tracker for D20 games. </h3>
+<h3>An initiative tracker for D20 games, written in React. </h3>
 
 https://initative-app.herokuapp.com/
 1. Type player and monster names in the Player/Foe field and the initiative modifier in the modifier field. 
