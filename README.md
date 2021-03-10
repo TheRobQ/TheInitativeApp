@@ -1,4 +1,4 @@
-# The Initative App
+# The Initiative App
 <h3>An initiative tracker for D20 games, written in React. </h3>
 
 https://initative-app.herokuapp.com/
