@@ -10,7 +10,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-pinterest": "^1.2.0",
-    "react-scripts": "1.1.4"
+    "react-scripts": "4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
