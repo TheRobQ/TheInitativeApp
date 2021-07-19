@@ -15,6 +15,7 @@ class App extends Component {
       combat: false,
       initativeList: []
     }
+    console.log('version .2.0')
   }
   //Set Values for a player's name in the form
   handleNameChange = (id) => (e) => {
