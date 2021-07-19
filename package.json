@@ -1,16 +1,14 @@
 {
   "name": "initative-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "eslint": "^4.19.1",
-    "jquery": "3.5.0",
-    "popper.js": "^1.15.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-pinterest": "^1.2.0",
-    "react-scripts": "4.0.3"
+    "bootstrap": "^5.0.2",
+    "eslint": "7.31.0",
+    "react": "^17.0",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "typescript": "4.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
