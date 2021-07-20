@@ -1,4 +1,5 @@
 import React from 'react'
+import FormInput from './Input.jsx';
 
 const PlayerCard = (props) => {
 
@@ -8,7 +9,13 @@ const PlayerCard = (props) => {
             <label>Player/Foe</label>
           </td>
           <td>
-            <input type="text" className="characterName" name="characterName" size="18" value={props.name} onChange={props.handleNameChange(props.id)} required />
+            <FormInput 
+              className="characterName" 
+              name="characterName" 
+              size="18"
+              value={props.name}
+              onChange={props.handleNameChange(props.id)}
+            />
           </td>
           <td>
             <label className="modLabel"> Modifier</label>
@@ -18,6 +25,6 @@ const PlayerCard = (props) => {
           </td>
         </tr>
     )
-}
+};
 
 export default PlayerCard

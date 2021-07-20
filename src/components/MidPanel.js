@@ -1,7 +1,7 @@
 import React from 'react';
 import InitativeList from './InitativeList';
 
-const MidPanel =({players, setInitative,  clearCombat, removePlayer, turnRed}) => {
+const MidPanel = ({players, setInitative,  clearCombat, removePlayer, turnRed}) => {
     return (
       <section className="main">
         <h1>Initiative order</h1>

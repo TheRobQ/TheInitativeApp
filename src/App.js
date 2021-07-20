@@ -19,14 +19,7 @@ class App extends Component {
 
   //Set Values for a player's name in the form
   handleNameChange = (id) => (e) => {
-    const newVal = this.state.players.map(
-      (player, pid) =>{
-        if(id !== pid){
-          return player
-        }
-        return{...player, name: e.target.value}
-      })
-      this.setState({players: newVal})
+    
   };
 
   //Set Values for a player's initative modifier in the form
