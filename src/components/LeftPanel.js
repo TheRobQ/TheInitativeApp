@@ -17,7 +17,7 @@ const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleName
   const clearParty = () =>     localStorage.clear();
 
 
-    return(
+  return(
     <section className="sider">
       <form id="form1" onSubmit={rollTheDice}>
         <table>
@@ -54,7 +54,8 @@ const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleName
         <p  className="btn btn-primary" id="clear" onClick={clearParty}>Clear party</p>
         <br />
       </div>
-    </section>)}
+    </section>
+    )}
 
 
 export default LeftPanel

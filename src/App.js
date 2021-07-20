@@ -15,8 +15,8 @@ class App extends Component {
       combat: false,
       initativeList: []
     }
-    console.log('version .2.0')
-  }
+  };
+
   //Set Values for a player's name in the form
   handleNameChange = (id) => (e) => {
     const newVal = this.state.players.map(
@@ -27,7 +27,7 @@ class App extends Component {
         return{...player, name: e.target.value}
       })
       this.setState({players: newVal})
-  }
+  };
 
   //Set Values for a player's initative modifier in the form
   handleModChange = (id) => (e) => {
@@ -118,6 +118,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('version .2.0')
     return (
       <div className="grid">
         <Navbar />
