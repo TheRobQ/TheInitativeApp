@@ -1,13 +1,26 @@
 import React from 'react';
 
-const FormInput = ( {name,
+const FormInput = ( {
     type,
     placeholder,
     onChange,
     className,
-    value,} ) => {
+    name,
+    size,
+    value,
+    pattern
+} ) => {
     return (
-        <input type={type} className={className} name={name} onChange={onChange} value={value} placeholder={placeholder}/>
+        <input 
+            type={type} 
+            placeholder={placeholder} 
+            onChange={onChange} 
+            className={className} 
+            name={name} 
+            size={size} 
+            value={value} 
+            pattern={pattern}
+        />
     )
 };
 

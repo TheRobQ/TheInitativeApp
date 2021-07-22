@@ -2,7 +2,7 @@ import React from 'react';
 import RollButton from './RollButton';
 import PlayerList from './PlayerList'
 
-const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleNameChange, handleModChange, rollTheDice, combat, loadParty}) => {
+const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleNameChange, handleModifierChange, rollTheDice, combat, loadParty}) => {
 
   //Saves party to local storage, if feild is blank, won't Saves
   const saveParty = (event) =>{
@@ -22,7 +22,7 @@ const LeftPanel = ({addCharacter, removeCharacter, removeAll, cards,  handleName
       <form id="form1" onSubmit={rollTheDice}>
         <table>
           <tbody>
-            <PlayerList cards={cards} handleNameChange={handleNameChange} handleModChange={handleModChange} combat={combat}/>
+            <PlayerList cards={cards} handleNameChange={handleNameChange} handleModifierChange={handleModifierChange} combat={combat}/>
             <tr className="holder">
             </tr>
             <tr id="buttonRow">

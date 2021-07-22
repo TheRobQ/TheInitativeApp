@@ -18,20 +18,28 @@ class App extends Component {
   };
 
   //Set Values for a player's name in the form
-  handleNameChange = (id) => (e) => {
-    
+  handleNameChange = (e, id) => {
+    const newVal = this.state.players.map(
+      (player, pid) =>{
+        if(id !== pid){
+          return player
+        }
+        return{...player, name: e.target.value}
+      });
+      this.setState({players: newVal});
+    this.setState({value: e.target.value});
   };
 
   //Set Values for a player's initative modifier in the form
-  handleModChange = (id) => (e) => {
+  handleModifierChange = (id) => (e) => {
     const newVal = this.state.players.map(
       (player, pid) =>{
         if(id !== pid){
           return player
         }
         return{...player, modifier: e.target.value}
-      })
-      this.setState({players: newVal})
+      });
+      this.setState({players: newVal});
   }
 
   //Generate a random number from 1 to 20
@@ -121,7 +129,7 @@ class App extends Component {
           removeAll={this.removeAll}
           cards={this.state.players}
           handleNameChange={this.handleNameChange}
-          handleModChange={this.handleModChange}
+          handleModifierChange={this.handleModifierChange}
           rollTheDice={this.rollTheDice}
           combat={this.state.combat}
           loadParty={this.loadParty}
