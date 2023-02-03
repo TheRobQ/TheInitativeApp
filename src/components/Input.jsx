@@ -8,7 +8,8 @@ const FormInput = ( {
     name,
     size,
     value,
-    pattern
+    pattern, 
+    id
 } ) => {
     return (
         <input 

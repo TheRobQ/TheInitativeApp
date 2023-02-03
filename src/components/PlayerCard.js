@@ -2,18 +2,10 @@ import React from 'react'
 import FormInput from './Input.jsx';
 
 const PlayerCard = (props) => {
-  const characterInputChanged = (e) => {
-      console.log(e.target)
-      props.handleNameChange(e)
-    };
-
-    const modifierInputChanges = (e) => {
-      console.log(e.target);
-      props.handleModifierChange
-    };
+  console.log(props)
 
     return(
-        <tr className="inputRow">
+        <tr className="inputRow" id={props.id}>
           <td>
             <label>Player/Foe</label>
           </td>
@@ -21,7 +13,7 @@ const PlayerCard = (props) => {
             <FormInput 
               type="text"
               placeHolder = ''
-              onChange={characterInputChanged}
+              onChange={ e => props.handleNameChange(props.id, e)}
               className="characterName" 
               name="characterName" 
               size="18"
@@ -33,7 +25,7 @@ const PlayerCard = (props) => {
             <FormInput
               type="text"
               placeHolder = ''
-              onChange={modifierInputChanges}
+              onChange={ e => props.handleModifierChange(props.id, e)}
               className="modifier" 
               name="modifier" maxLength="3" size="3" 
               pattern="[0-9]"

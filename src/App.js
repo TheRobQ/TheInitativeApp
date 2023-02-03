@@ -18,10 +18,10 @@ class App extends Component {
   };
 
   //Set Values for a player's name in the form
-  handleNameChange = (e, id) => {
+  handleNameChange = (index, e) => {
     const newVal = this.state.players.map(
-      (player, pid) =>{
-        if(id !== pid){
+      (player, i) =>{
+        if(i != index){
           return player
         }
         return{...player, name: e.target.value}
@@ -31,10 +31,10 @@ class App extends Component {
   };
 
   //Set Values for a player's initative modifier in the form
-  handleModifierChange = (id) => (e) => {
+  handleModifierChange = (index, e) => {
     const newVal = this.state.players.map(
-      (player, pid) =>{
-        if(id !== pid){
+      (player, i) =>{
+        if(index != i){
           return player
         }
         return{...player, modifier: e.target.value}
@@ -43,7 +43,7 @@ class App extends Component {
   }
 
   //Generate a random number from 1 to 20
-   random = () => {
+  random = () => {
     return Math.floor((Math.random() * 20) + 1)
   }
 
