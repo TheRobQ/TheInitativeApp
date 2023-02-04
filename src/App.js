@@ -51,22 +51,24 @@ class App extends Component {
   rollTheDice = (event) =>{
     event.preventDefault()
     let initativeList = []
-    for(let i = 0; i < this.state.players.length; i++){
-      initativeList.push(this.state.players[i])
-    }
+    this.state.players.forEach( player => {
+      if(player.name && !isNaN(parseInt(player.modifier))) {
+        initativeList.push(player)
+      }
+    });
     initativeList.forEach(element => {
        element.initValue = parseInt(element.modifier,10) + this.random();
        element.highlight = false})
     this.setState((prevState) => {
       return   {combat: true, initativeList: initativeList}
-    })
-  }
+    });
+  };
 
 //MidPanel clear button click, sets value to false and renders an empty midpanel
   clearCombat = (event) =>{
     event.preventDefault()
       this.setState({combat: false, initativeList: []})
-  }
+  };
 
   //Button Row functions
   //add object to players array
