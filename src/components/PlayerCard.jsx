@@ -23,12 +23,11 @@ const PlayerCard = (props) => {
           <td>
             <label className="modLabel"> Modifier</label>
             <FormInput
-              type="text"
+              type="number"
               placeHolder = ''
               onChange={ e => props.handleModifierChange(props.id, e)}
               className="modifier" 
-              name="modifier" maxLength="3" size="3" 
-              pattern="[0-9]"
+              name="modifier" size="3" 
             />
           </td>
         </tr>

@@ -151,6 +151,7 @@ center{
 .modifier {
   outline: none;
   background-color: white;
+  width: 60px;
 }
 
 .modifier1 {

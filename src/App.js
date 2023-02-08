@@ -7,8 +7,8 @@ import RightPanel from './components/RightPanel';
 import Footer from './components/Footer';
 
 class App extends Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
     this.state = {
       players: [{name: '', modifier:''}, {name: '', modifier:''},
       {name: '', modifier:''},],
@@ -42,7 +42,7 @@ class App extends Component {
       this.setState({players: newVal});
   }
 
-  //Generate a random number from 1 to 20
+  //Generate a random number from 1 to 20 (this is the range of a D20)
   random = () => {
     return Math.floor((Math.random() * 20) + 1)
   }
