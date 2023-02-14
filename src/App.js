@@ -10,8 +10,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      players: [{name: '', modifier:''}, {name: '', modifier:''},
-      {name: '', modifier:''},],
+      players: [{name: '', modifier:'', initValue: 0, highlight: false}, {name: '', modifier:'', initValue: 0, highlight: false}, {name: '', modifier:'', initValue: 0, highlight: false}],
       combat: false,
       initativeList: []
     }
@@ -27,7 +26,7 @@ class App extends Component {
         return{...player, name: e.target.value}
       });
       this.setState({players: newVal});
-    this.setState({value: e.target.value});
+     
   };
 
   //Set Values for a player's initative modifier in the form
@@ -49,19 +48,12 @@ class App extends Component {
 
 //roll button clicked, sets value to true which kciks off the array map in the initative list component
   rollTheDice = (event) =>{
-    event.preventDefault()
-    let initativeList = []
-    this.state.players.forEach( player => {
-      if(player.name && !isNaN(parseInt(player.modifier))) {
-        initativeList.push(player)
-      }
-    });
-    initativeList.forEach(element => {
-       element.initValue = parseInt(element.modifier,10) + this.random();
-       element.highlight = false})
-    this.setState((prevState) => {
-      return   {combat: true, initativeList: initativeList}
-    });
+    event.preventDefault();
+    const initativeList = this.state.players.filter( player => player.name && !isNaN(parseInt(player.modifier,10)) );
+
+    initativeList.forEach(player => player.initValue = parseInt(player.modifier,10) + this.random() )
+    
+    this.setState(  {combat: true, initativeList: initativeList} );
   };
 
 //MidPanel clear button click, sets value to false and renders an empty midpanel

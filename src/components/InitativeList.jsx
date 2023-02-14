@@ -1,8 +1,6 @@
 import React from 'react';
 import InitativeCard from './InitativeCard';
 
-
-
 const InitativeList = ({players, setInitative, removePlayer, turnRed}) =>{
 
     if(setInitative === true){
