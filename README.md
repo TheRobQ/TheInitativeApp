@@ -1,6 +1,8 @@
 # The Initiative App
 <h3>An initiative tracker for D20 games, written in React. </h3>
 
+Branch HooksRefactor updates the app to use Hooks. 
+
 With the changes to Heroku, new url TBD.
 
 1. Type player and monster names in the Player/Foe field and the initiative modifier in the modifier field. 
