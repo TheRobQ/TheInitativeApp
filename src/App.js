@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, uiseEffect } from 'react';
 import './App1.css';
 import Navbar from './components/Navbar';
 import LeftPanel from './components/LeftPanel';
@@ -6,15 +6,15 @@ import MidPanel from './components/MidPanel';
 import RightPanel from './components/RightPanel';
 import Footer from './components/Footer';
 
-class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      players: [{name: '', modifier:'', initValue: 0, highlight: false}, {name: '', modifier:'', initValue: 0, highlight: false}, {name: '', modifier:'', initValue: 0, highlight: false}],
-      combat: false,
-      initativeList: []
-    }
-  };
+const App  = () => {
+  // constructor(){
+  //   super();
+  //   this.state = {
+  //     players: [{name: '', modifier:'', initValue: 0, highlight: false}, {name: '', modifier:'', initValue: 0, highlight: false}, {name: '', modifier:'', initValue: 0, highlight: false}],
+  //     combat: false,
+  //     initativeList: []
+  //   }
+  // };
 
   //Set Values for a player's name in the form
   handleNameChange = (index, e) => {
