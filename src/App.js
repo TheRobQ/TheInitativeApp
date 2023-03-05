@@ -1,4 +1,4 @@
-import React, { useState, uiseEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App1.css';
 import Navbar from './components/Navbar';
 import LeftPanel from './components/LeftPanel';
@@ -16,21 +16,25 @@ const App  = () => {
   //   }
   // };
 
+  const [players, setPlayers] = useState([{name: '', modifier:'', initValue: 0, highlight: false}, {name: '', modifier:'', initValue: 0, highlight: false}, {name: '', modifier:'', initValue: 0, highlight: false}]);
+  const [combat, setCombat] = useState(false);
+  const [initativeList, setinitativeList] = useState([]);
+
   //Set Values for a player's name in the form
-  handleNameChange = (index, e) => {
-    const newVal = this.state.players.map(
+  const handleNameChange = (index, e) => {
+    const newVal = players.map(
       (player, i) =>{
         if(i != index){
           return player
         }
-        return{...player, name: e.target.value}
+        return {...player, name: e.target.value}
       });
-      this.setState({players: newVal});
+      setPlayers(newVal);
      
   };
 
   //Set Values for a player's initative modifier in the form
-  handleModifierChange = (index, e) => {
+  const handleModifierChange = (index, e) => {
     const newVal = this.state.players.map(
       (player, i) =>{
         if(index != i){
@@ -42,12 +46,12 @@ const App  = () => {
   }
 
   //Generate a random number from 1 to 20 (this is the range of a D20)
-  random = () => {
+  const random = () => {
     return Math.floor((Math.random() * 20) + 1)
   }
 
 //roll button clicked, sets value to true which kciks off the array map in the initative list component
-  rollTheDice = (event) =>{
+  const rollTheDice = (event) =>{
     event.preventDefault();
     const initativeList = this.state.players.filter( player => player.name && !isNaN(parseInt(player.modifier,10)) );
 
@@ -57,33 +61,33 @@ const App  = () => {
   };
 
 //MidPanel clear button click, sets value to false and renders an empty midpanel
-  clearCombat = (event) =>{
+  const clearCombat = (event) =>{
     event.preventDefault()
       this.setState({combat: false, initativeList: []})
   };
 
   //Button Row functions
   //add object to players array
-  addCharacter = (e) =>{
+  const addCharacter = (e) =>{
     e.preventDefault()
     this.setState({players: [...this.state.players, {name: '', modifier:''}]})
   }
 
   //remove last object from players array
-  removeCharacter = (e) =>{
+  const removeCharacter = (e) =>{
     e.preventDefault()
     this.setState({players: this.state.players.slice(0, -1)})
   }
 
   //Local storage utilities
   //clears players array. Usefuyl for loading a pre-defined party
-  removeAll = (e) =>{
+  const removeAll = (e) =>{
     e.preventDefault()
     this.setState({players: []})
   }
 
   //Player clicks load party, adds party to state object
-  loadParty =(event) => {
+  const loadParty =(event) => {
     let keys = Object.keys(localStorage);
     const localParty = [];
 
@@ -94,14 +98,14 @@ const App  = () => {
   }
 
 //Player clicks skull on MidPanel to remove that player from the initative list
- removePlayer = (event, id) =>{
+const removePlayer = (event, id) =>{
     event.preventDefault()
     let players = this.state.initativeList
     players.splice(id, 1)
     this.setState({initativeList: players})
   }
 
-  turnRed = (event, id) =>{
+  const turnRed = (event, id) =>{
     const toggle = this.state.initativeList.map(
       (player, index) =>{
         if(id !== index){
@@ -112,33 +116,30 @@ const App  = () => {
       this.setState({initativeList: toggle})
   }
 
-  render() {
-    console.log('version .2.0')
     return (
       <div className="grid">
         <Navbar />
         <LeftPanel
-          addCharacter={this.addCharacter}
-          removeCharacter={this.removeCharacter}
-          removeAll={this.removeAll}
-          cards={this.state.players}
-          handleNameChange={this.handleNameChange}
-          handleModifierChange={this.handleModifierChange}
-          rollTheDice={this.rollTheDice}
-          combat={this.state.combat}
-          loadParty={this.loadParty}
+          addCharacter={addCharacter}
+          removeCharacter={removeCharacter}
+          removeAll={removeAll}
+          players={players}
+          handleNameChange={handleNameChange}
+          handleModifierChange={handleModifierChange}
+          rollTheDice={rollTheDice}
+          combat={combat}
+          loadParty={loadParty}
         />
         <MidPanel
-          players={this.state.initativeList}
-          setInitative={this.state.combat}
-          clearCombat={this.clearCombat}
-          removePlayer={this.removePlayer}
-          turnRed={this.turnRed} />
+          players={initativeList}
+          setInitative={combat}
+          clearCombat={clearCombat}
+          removePlayer={removePlayer}
+          turnRed={turnRed} />
         <RightPanel  />
         <Footer />
       </div>
     );
-  }
 }
 
 export default App;

@@ -1,10 +1,16 @@
 import React from 'react';
 import PlayerCard from './PlayerCard'
 
-const PlayerList = ({cards, handleNameChange, handleModifierChange, setInitative}) => {
+const PlayerList = ({players, handleNameChange, handleModifierChange, setInitative}) => {
+  console.log(players)
 
     return(
-      cards.map((card, i)  => <PlayerCard key={i} name={card.name} id={i} modifier={card.modifier} handleNameChange={handleNameChange} handleModifierChange={handleModifierChange} setInitative={setInitative}/>)
+      players.map((player, i)  => <PlayerCard key={i} 
+        name={player.name} 
+        id={i} modifier={player.modifier} 
+        handleNameChange={handleNameChange} 
+        handleModifierChange={handleModifierChange} 
+        setInitative={setInitative}/>)
     )
 }
 

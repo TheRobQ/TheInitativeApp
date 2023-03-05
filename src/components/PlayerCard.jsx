@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import FormInput from './Input.jsx';
 
 const PlayerCard = (props) => {
-  console.log(props)
+  
+  useEffect( () => {
+    console.log(props);
+  });
 
     return(
         <tr className="inputRow" id={props.id}>
@@ -27,7 +30,8 @@ const PlayerCard = (props) => {
               placeHolder = ''
               onChange={ e => props.handleModifierChange(props.id, e)}
               className="modifier" 
-              name="modifier" size="3" 
+              name="modifier" 
+              size="3" 
             />
           </td>
         </tr>
