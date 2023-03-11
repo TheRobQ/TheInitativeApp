@@ -55,7 +55,7 @@ const App  = () => {
     event.preventDefault();
     const initativeList = players.filter( player => player.name && !isNaN(parseInt(player.modifier,10)) );
 
-    initativeList.forEach(player => player.initValue = parseInt(player.modifier,10) + this.random() )
+    initativeList.forEach(player => player.initValue = parseInt(player.modifier,10) + random() )
     setinitativeList(initativeList);
     setCombat(true);
     //this.setState(  {combat: true, initativeList: initativeList} );
@@ -101,8 +101,8 @@ const App  = () => {
     setPlayers([...localParty, ...players])
   };
 
-//Player clicks skull on MidPanel to remove that player from the initative list
-const removePlayer = (event, id) =>{
+  //Player clicks skull on MidPanel to remove that player from the initative list
+  const removePlayer = (event, id) =>{
     event.preventDefault()
     let updatedInitList = players.filter( player => player.id != id)
     setinitativeList(updatedInitList);
